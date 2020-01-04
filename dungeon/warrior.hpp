@@ -17,6 +17,8 @@ class Warrior: public Player {
 public:
     // constructor
     Warrior();
+    // override the print method
+    void print();
 };
 
 #endif /* warrior_hpp */

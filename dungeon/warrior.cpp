@@ -8,6 +8,8 @@
 
 #include "warrior.hpp"
 
+using namespace std;
+
 Warrior::Warrior() {
     std::cout << "Warrior Constructor started." << std::endl;
     
@@ -16,8 +18,11 @@ Warrior::Warrior() {
     this->setATK(10);
     this->setDEF(10);
     
+    
     std::cout << "Warrior Constructor finished" << std::endl;
 }
 
-
+void Warrior::print() {
+    cout << "X";
+}
 
