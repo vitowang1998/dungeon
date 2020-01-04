@@ -10,8 +10,12 @@
 #include <stdlib.h>
 #include "warrior.hpp"
 #include "utils.hpp"
+#include "item.hpp"
 
 using namespace std;
+
+// TODO
+//typedef Item * MAP[50][50];
 
 int main(int argc, const char * argv[]) {
     
@@ -31,6 +35,7 @@ int main(int argc, const char * argv[]) {
         
     }
     
+    Item * map[50][50];
     Player *p = nullptr;
     Utils util;
     
@@ -43,12 +48,16 @@ int main(int argc, const char * argv[]) {
             cout << "Invalid input for player type selection." << endl;
             break;
     }
-    
+    map[0][0] = p;
     // invariant: The player type is correctly initialized
     
     util.clearScreen();
     
-    
+    for (int i = 0; i < 49; ++i) {
+        for (int j = 0; j < 49; ++j) {
+            map[i][j]->print();
+        }
+    }
     
     
     return 0;
