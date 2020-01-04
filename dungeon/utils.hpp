@@ -14,6 +14,7 @@
 class Utils {
 public:
     void clearScreen();
+    void printMap();
 };
 
 #endif /* utils_hpp */
