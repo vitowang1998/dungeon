@@ -10,8 +10,9 @@
 #define character_hpp
 
 #include <stdio.h>
+#include "item.hpp"
 
-class Character {
+class Character: public Item {
 private:
     int hp;
     int atk;
