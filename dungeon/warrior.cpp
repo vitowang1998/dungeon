@@ -7,19 +7,21 @@
 //
 
 #include "warrior.hpp"
+#include "logger.hpp"
 
 using namespace std;
 
+Logger logger;
+
 Warrior::Warrior() {
-    std::cout << "Warrior Constructor started." << std::endl;
+    logger.write("Warrior Constructor started.");
     
     // set the starting attributes for the warrior character
     this->setHP(1000);
     this->setATK(10);
     this->setDEF(10);
     
-    
-    std::cout << "Warrior Constructor finished" << std::endl;
+    logger.write("Warrior Constructor finished");
 }
 
 void Warrior::print() {
