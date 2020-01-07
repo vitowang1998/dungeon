@@ -8,9 +8,12 @@
 
 #include <iostream>
 #include <stdlib.h>
+#include <fstream>
+#include <string>
 #include "warrior.hpp"
 #include "utils.hpp"
 #include "item.hpp"
+#include "logger.hpp"
 
 using namespace std;
 
@@ -18,6 +21,15 @@ using namespace std;
 //typedef Item * MAP[50][50];
 
 int main(int argc, const char * argv[]) {
+    
+    Item * map[50][50];
+    Player *p = nullptr;
+    Utils util;
+    ifstream reader;
+    string line;
+    Logger logger;
+    
+    logger.write("Start writing welcome messages.");
     
     cout << "----------------------------" << endl;
     cout << "Welcome to the dungeon game." << endl;
@@ -28,6 +40,8 @@ int main(int argc, const char * argv[]) {
     cout << "4: Assassin" << endl;
     cout << "5: Wizard" << endl;
     
+    logger.write("Finished writing welcome messages.");
+    
     int userInput;
     try {
         cin >> userInput;
@@ -35,13 +49,11 @@ int main(int argc, const char * argv[]) {
         
     }
     
-    Item * map[50][50];
-    Player *p = nullptr;
-    Utils util;
+    
     
     switch (userInput) {
         case 1:
-            cout << "The user selected Warrior." << endl;
+            logger.write("The user selected Warrior.");
             p = new Warrior();
             break;
         default:
@@ -52,12 +64,22 @@ int main(int argc, const char * argv[]) {
     // invariant: The player type is correctly initialized
     
     util.clearScreen();
+//
+//    reader.open("floor1.txt");
+//
+//    while (!reader.eof()) {
+//        reader >> line;
+//        cout << line;
+//    }
+
     
-    for (int i = 0; i < 49; ++i) {
-        for (int j = 0; j < 49; ++j) {
-            map[i][j]->print();
-        }
-    }
+    
+//    for (int i = 0; i < 49; ++i) {
+//        for (int j = 0; j < 49; ++j) {
+//            map[i][j]->print();
+//            break;
+//        }
+//    }
     
     
     return 0;
