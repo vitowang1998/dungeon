@@ -11,4 +11,10 @@
 
 #include <stdio.h>
 
+class Logger {
+public:
+    void write(std::string &&message);
+};
+
+
 #endif /* logger_hpp */
